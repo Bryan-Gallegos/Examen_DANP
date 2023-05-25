@@ -32,7 +32,7 @@ fun NavigationHost(
 
         composable(
             Pantalla2.route,
-            arguments = listOf(navArgument("newText"){ defaultValue = "Pantalla 2" })
+            arguments = listOf(navArgument("newText"){ defaultValue = "" })
         ) { navBackStackEntry ->
             var newText = navBackStackEntry.arguments?.getString("newText")
             requireNotNull(newText)

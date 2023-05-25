@@ -118,7 +118,7 @@ fun Formulario(
 
     //Botones
     Button(modifier = Modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Gray),
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color(0.0f, 0.8f, 0.8f),),
         onClick = {
             if (isEditando) {
                 editIncidente(nombre, nivel, caudal, estado, listaIncidente)

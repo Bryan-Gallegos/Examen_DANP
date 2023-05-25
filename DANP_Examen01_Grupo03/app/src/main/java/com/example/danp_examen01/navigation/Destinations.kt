@@ -11,9 +11,9 @@ sealed class Destinations(
     val title: String,
     val icon: ImageVector
 ) {
-    object Pantalla1: Destinations("pantalla1", "Pantalla 1", Icons.Filled.Home)
-    object Pantalla2: Destinations("pantalla2/?newText={newText}", "Pantalla 2", Icons.Filled.Settings) {
+    object Pantalla1: Destinations("pantalla1", "", Icons.Filled.Home)
+    object Pantalla2: Destinations("pantalla2/?newText={newText}", "", Icons.Filled.Settings) {
         fun createRoute(newText: String) = "pantalla2/?newText=$newText"
     }
-    object Pantalla3: Destinations("pantalla3", "Pantalla 3", Icons.Filled.Favorite)
+    object Pantalla3: Destinations("pantalla3", "", Icons.Filled.Favorite)
 }

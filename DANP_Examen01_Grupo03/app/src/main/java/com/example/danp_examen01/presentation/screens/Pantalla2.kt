@@ -20,6 +20,11 @@ fun Pantalla2(
     text: String
 ) {
     var listaIncidentes = remember{ mutableListOf<Incidente>() }
+    Text(
+        text = "Bienvenido "+text,
+        modifier = Modifier.padding(12.dp),
+        style = TextStyle(color = Color.Black, fontSize = 42.sp, fontWeight = FontWeight.Black)
+    )
     Box(modifier = Modifier.fillMaxSize()){
         ScreenCRUD(listaIncidentes)
     }
@@ -34,7 +39,10 @@ fun ScreenCRUD(listaIncidente: MutableList<Incidente>){
     var isEditando by remember { mutableStateOf(false) }
     var textButton by remember { mutableStateOf("Agregar Incidente") }
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(vertical = 15.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(vertical = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

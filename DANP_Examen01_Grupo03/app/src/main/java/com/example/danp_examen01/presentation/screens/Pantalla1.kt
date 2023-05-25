@@ -1,5 +1,6 @@
 package com.example.danp_examen01.presentation.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,16 +16,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.danp_examen01.R
 
 @Composable
 fun Pantalla1(
     navegarPantalla2: (String) -> Unit
 ) {
-    var textValue by remember { mutableStateOf("") }
+    var textValue by remember{ mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -34,18 +37,23 @@ fun Pantalla1(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "PANTALLA 1",
+            modifier = Modifier.padding(12.dp),
+            text = "Bienvendo a InfoDes",
             style = TextStyle(color = Color.Black, fontSize = 42.sp, fontWeight = FontWeight.Black)
         )
-
+        Image(
+            painter = painterResource(R.drawable.app_icon),
+            contentDescription = "Descripción de la imagen"
+        )
         TextField(
             value = textValue,
             onValueChange = { textValue = it },
-            label = { Text("Introducir Texto") }
+            label = { Text("Inserta tu nombre de Usuario") }
         )
 
+
         Button(onClick = { navegarPantalla2(textValue) }) {
-            Text("Enviar")
+            Text("Ingresar")
         }
     }
 }
